@@ -1,1 +1,2 @@
-# Quest-app
+# spring-boot-quest-app
+Quest app
