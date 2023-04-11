@@ -10,7 +10,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-        <a class="navbar-brand" href="/">Quest App</a>
+        <a class="navbar-brand" href="#">Quest App</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -29,18 +29,18 @@
         </div>
     </div>
 </nav>
+<div class="container text-right">
+    <form th:action="@{/logout}" method="post">
+
+        Welcome <b>[[${#request.userPrincipal.principal.fullName}]]</b>
+
+        <input type="submit" value="Sign Out"/>
+    </form>
+</div>
+
 <div class="container text-center">
     <div>
-        <form th:action="@{/logout}" method="post">
-            <p>
-                Welcome <b>[[${#request.userPrincipal.principal.fullName}]]</b>
-            </p>
-            <input type="submit" value="Sign Out"/>
-        </form>
-    </div>
-    <div>
         <h1>List of Users</h1>
-        <a href="/quests" class="btn btn-primary">Go to Quests Page</a>
     </div>
     <div>
         <table class="table table-striped table-bordered">

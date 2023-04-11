@@ -21,6 +21,7 @@ public class Quest {
     @Enumerated(EnumType.STRING)
     private Status status;
 
+
     @ManyToMany
     @JoinTable(name = "done_by_id",
             joinColumns= @JoinColumn(name = "quest_id"),
