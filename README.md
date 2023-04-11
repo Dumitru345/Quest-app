@@ -1,24 +1,33 @@
 
 ### 1. Description
 
-The purpose of this app is to allow a user to post a quest and the other users have the possibility to mark a specific quest as done.
-The app has 2 tables, 1 with users and 1 with quests. 
+QuestApp is a web application that enables users to post quests and mark specific quests as "done". 
+The app has two tables: one for users and one for quests. When a user registers, they start with 0 
+experience points (exp), 10 tokens, and the "BRONZE" title. Every time a user marks a quest as "done", 
+they receive 7 tokens and 10 exp. On the other hand, every time a user posts a quest, they lose 5 tokens. 
+Users can earn new titles as they gain more experience points. Specifically, when a user reaches 20 exp, 
+they receive the "SILVER" title, and when they reach 50 exp, they receive the "GOLD" title. 
+Finally, when a user reaches 70 exp, they receive the "DIAMOND" title.
 
-Supported actions:
+QuestApp supports the following features:
 
-- register a new user
-- login
-- create quests
-- mark quests as done
-- sort the transactions by amount or date
+- Registering a new user
+- Logging in
+- Viewing a list of users and quests
+- Creating quests
+- Marking quests as done
+
 
 ---
 
 ### 2. Setup
 
-Create a schema in MySQL and update in the application.properties the url, username and password accordingly.
+To set up QuestApp, follow these steps:
 
-Once started, access it with a web browser at: <http://localhost:8080>
+- Create a schema in MySQL.
+- Update the application.properties file with the MySQL URL, username, and password.
+- Start the application.
+- Access the application using a web browser at http://localhost:8080.
 
 ---
 
@@ -30,18 +39,26 @@ __Technologies__
 
 - main code is written in Java (version 17)
 - it uses [MySQL](https://www.mysql.com/)
-- it uses [SpringBoot](https://spring.io/projects/spring-boot) 
-- it uses [Thymeleaf](https://www.thymeleaf.org/)
+- it uses [SpringBoot](https://spring.io/projects/spring-boot), using this dependencies:
+  - Thymeleaf (https://www.thymeleaf.org/)
+  - Spring-Boot-Security
+  - Spring-Boot-Data-Jpa
+- external dependencies:
+  - mysql-connector-java 
+  - jquery 
+  - bootstrap 
+
 
 __Code structure__
 
 - java code is organized in packages by its role, on layers:
-  - entity- including the User class and Quest class
+  - entity - including the User class and Quest class
   - controller - Controller app
-  - repository
+  - repository for Quest and User class
   - security
   - service
-  - templates - code related to the interface/presentation layer
+  - templates - with the html
+  - questapp with some basics tests
 
 ---
 
